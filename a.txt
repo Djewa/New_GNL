@@ -1,0 +1,4 @@
+Hi
+Hello
+get_next_line
+42 Bangkok
