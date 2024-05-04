@@ -107,31 +107,20 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-#include <fcntl.h>
-
-// int	main()
+// #include <fcntl.h>
+// int main()
 // {
-// 	int	fd;
-
-// 	fd = open("c.txt", O_RDONLY);
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
+// 	int fd = open("c.txt", O_RDONLY);
+// 	char *line;
+// 	int no = 1;
+// 	line = get_next_line(fd);
+// 	while (line)
+// 	{
+// 		printf("%i: %s", no, line);
+// 		free(line);
+// 		line = get_next_line(fd);
+// 		no++;
+// 	}
+// 	close(fd);
+// 	return (0);
 // }
-
-int main()
-{
-	int fd = open("c.txt", O_RDONLY);
-	char *line;
-	int no = 1;
-	line = get_next_line(fd);
-	while (line)
-	{
-		printf("%i: %s", no, line);
-		free(line);
-		line = get_next_line(fd);
-		no++;
-	}
-	close(fd);
-	return (0);
-}

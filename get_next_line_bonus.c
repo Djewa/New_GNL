@@ -100,42 +100,40 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buffer[fd] = ft_read_line(fd, buffer[fd]);
-	if (buffer == NULL)
+	if (buffer[fd] == NULL)
 		return (NULL);
 	line = ft_get_line(buffer[fd]);
 	buffer[fd] = ft_next_line(buffer[fd]);
 	return (line);
 }
 
-#include <fcntl.h>
-
-int main ()
-{
-	int fd1 = open("a.txt", O_RDONLY);
-	int fd2 = open("c.txt", O_RDONLY);
-	char *line;
-
-	line = get_next_line(fd1);
-	printf("%s\n", line);
-	free(line);
-	line = get_next_line(fd2);
-	printf("%s\n", line);
-	free(line);
-	line = get_next_line(fd1);
-	printf("%s\n", line);
-	free(line);
-	line = get_next_line(fd2);
-	printf("%s\n", line);
-	free(line);
-	line = get_next_line(fd2);
-	printf("%s\n", line);
-	free(line);
-	line = get_next_line(fd1);
-	printf("%s\n", line);
-	free(line);
-	line = get_next_line(fd1);
-	printf("%s\n", line);
-	free(line);
-	close(fd1);
-	close(fd2);
-}
+// #include <fcntl.h>
+// int main ()
+// {
+// 	int fd1 = open("a.txt", O_RDONLY);
+// 	int fd2 = open("c.txt", O_RDONLY);
+// 	char *line;
+// 	line = get_next_line(fd1);
+// 	printf("%s\n", line);
+// 	free(line);
+// 	line = get_next_line(fd2);
+// 	printf("%s\n", line);
+// 	free(line);
+// 	line = get_next_line(fd1);
+// 	printf("%s\n", line);
+// 	free(line);
+// 	line = get_next_line(fd2);
+// 	printf("%s\n", line);
+// 	free(line);
+// 	line = get_next_line(fd2);
+// 	printf("%s\n", line);
+// 	free(line);
+// 	line = get_next_line(fd1);
+// 	printf("%s\n", line);
+// 	free(line);
+// 	line = get_next_line(fd1);
+// 	printf("%s\n", line);
+// 	free(line);
+// 	close(fd1);
+// 	close(fd2);
+// }
